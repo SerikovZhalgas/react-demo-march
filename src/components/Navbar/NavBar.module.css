@@ -12,3 +12,8 @@
 .item a.active {
     color: gold;
 }
+
+.friendsNavBarItems {
+    display: grid;
+    grid-template-columns: 20fr 20fr 20fr;
+}

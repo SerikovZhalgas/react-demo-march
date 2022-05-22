@@ -8,6 +8,8 @@ import {BrowserRouter, Route, Routes} from "react-router-dom"
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
+import Friends from "./components/Friends/Friends";
+import FriendsNavBar from "./components/FriendsNavBar/FriendsNavBar";
 
 
 const App = (props) => {
@@ -16,7 +18,7 @@ const App = (props) => {
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
-                <NavBar/>
+                <NavBar state={props.state.friendsPage}/>
                 <div className='app-wrapper-content'>
                     <Routes>
                         <Route path='/dialogs'
@@ -29,6 +31,10 @@ const App = (props) => {
                                element={<Music/>}/>
                         <Route path='/settings'
                                element={<Settings/>}/>
+                        <Route path='/friends'
+                               element={<Friends state={props.state.friendsPage}/>}/>
+                        <Route path='/friendsNavBar'
+                               element={<FriendsNavBar state={props.state.friendsPage}/>}/>
                     </Routes>
                 </div>
             </div>

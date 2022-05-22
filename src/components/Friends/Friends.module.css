@@ -1,0 +1,18 @@
+.friendItem {
+    width: 100px;
+}
+
+.friends {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.friendsItems {
+    padding: 10px;
+    color: white;
+}
+
+.friendsItems .active {
+    color: gold;
+}
+
