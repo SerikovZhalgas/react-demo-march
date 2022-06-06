@@ -10,12 +10,11 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import Friends from "./components/Friends/Friends";
 import FriendsNavBar from "./components/FriendsNavBar/FriendsNavBar";
+import {addPostToState} from "./redux/state";
 
 
 const App = (props) => {
-
     return (
-        <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
                 <NavBar state={props.state.friendsPage}/>
@@ -24,7 +23,8 @@ const App = (props) => {
                         <Route path='/dialogs'
                                element={<Dialogs state={props.state.dialogsPage}/>}/>
                         <Route path='/profile'
-                               element={<Profile state={props.state.profilePage}/>}/>
+                               element={<Profile state={props.state.profilePage}
+                                                 addPost={props.addPost}/>}/>
                         <Route path='/news'
                                element={<News/>}/>
                         <Route path='/music'
@@ -33,12 +33,10 @@ const App = (props) => {
                                element={<Settings/>}/>
                         <Route path='/friends'
                                element={<Friends state={props.state.friendsPage}/>}/>
-                        <Route path='/friendsNavBar'
-                               element={<FriendsNavBar state={props.state.friendsPage}/>}/>
                     </Routes>
                 </div>
             </div>
-        </BrowserRouter>)
+    )
 }
 
 export default App;
